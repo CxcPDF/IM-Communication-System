@@ -12,7 +12,16 @@
         <module>Traditional-IO</module>
         <module>NIO-IM</module>
         <module>Netty-IM</module>
+        <module>客户端与服务端双向通信</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.netty.</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.6.Final</version>
+        </dependency>
+    </dependencies>
 
 
 </project>

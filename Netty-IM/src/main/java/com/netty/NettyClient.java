@@ -20,8 +20,12 @@ public class NettyClient {
         Bootstrap bootstrap = new Bootstrap();
         NioEventLoopGroup group = new NioEventLoopGroup();
 
-        bootstrap.group(group)
+        bootstrap
+                //1. 指定线程模型
+                .group(group)
+                //2. 指定IO类型为NIO
                 .channel(NioSocketChannel.class)
+                //3. IO处理逻辑
                 .handler(new ChannelInitializer<Channel>() {
                     @Override
                     protected void initChannel(Channel channel) {//比较奇怪这里抛出异常之后好像不能发送消息了
@@ -37,4 +41,7 @@ public class NettyClient {
             Thread.sleep(2000);
         }
     }
+
+
+
 }
